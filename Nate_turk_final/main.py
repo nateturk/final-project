@@ -7,6 +7,12 @@
 # help from https://www.youtube.com/watch?v=gnlWy-qi6Rs&list=PLhTjy8cBISEo3SzET7Fc3-b4miKWp41yX&index=4
 # help from https://www.youtube.com/@buildwithpython "tutorial"
 
+#Goals:
+# Movement from left to right for the player
+# Create lasers that come out of the players space ship to hit the enemies
+# Movement from enemies to go to the side to the boundary and as they hit go down and to the other side boundary
+
+
 # Import libraries 
 # os allows access to the image files 
 # pygame is the main library which controls the game loop and other functions 
@@ -19,10 +25,9 @@ import math
 # initialize pygame 
 pygame.init ()
  
-# set up teh screen using pygame
+# set up the screen using pygame
 screen = pygame.display.set_mode ((800,600))
  
-#os.chdir("Code-Final-Project")
 # set up the images and name of the game window
 pygame.display.set_caption ("Space Raiders")
 icon = pygame.image.load ('space-ship.png')
@@ -157,7 +162,7 @@ while running:
                 enemyY [j] = 2000
             game_over_text ()
             break
-        # this is how the enemies move when they hit the side barriers as it means they go down and the speed they move side to side
+        # this is how the enemies move when they hit the side boundaries they go down and move side to side
         enemyX[i] += enemyX_change[i]   
         if enemyX[i] <=0 :
                 enemyX_change[i] = 2.5
